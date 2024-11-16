@@ -1,7 +1,7 @@
 import { useState, useEffect } from 'react';
 import io from 'socket.io-client';
 
-const socket = io('http://localhost:8000');
+const socket = io('https://chat-app-2-izxz.onrender.com');
 
 const ChatSection = () => {
   const [username, setUsername] = useState("User");
@@ -13,7 +13,7 @@ const ChatSection = () => {
   });
 
   useEffect(() => {
-    fetch('http://localhost:8000/chats').then(res => res.json()).then(data => {
+    fetch('https://chat-app-2-izxz.onrender.com/chats').then(res => res.json()).then(data => {
       setchat(data)
     })
 
